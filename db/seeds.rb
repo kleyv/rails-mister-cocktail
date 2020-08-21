@@ -15,12 +15,20 @@ url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredient_serialized = open(url).read
 ingredient = JSON.parse(ingredient_serialized)
 
-30.times do
-  Ingredient.create!(name: ingredient)
+# 30.times do
+#   Ingredient.create!(name: ingredient['drinks'].sample['strIngredient1'])
+# end
+
+for i in 1..29
+  Ingredient.create!(name: ingredient['drinks'][i]['strIngredient1'])
 end
 
+# old method
+# 5.times do
+#   Ingredient.create!(name: ingredient['drinks'].sample['strIngredient1'])
+# end
 
-# Seed Cocktails
+#Cocktails
 spells = []
 
 30.times do
@@ -29,5 +37,5 @@ end
 spells = spells.uniq
 
 for spell in spells
-  cocktail = Cocktail.new(name: spell)
+  cocktail = Cocktail.create!(name: spell)
 end
