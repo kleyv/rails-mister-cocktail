@@ -1,0 +1,27 @@
+<h1>Secret cocktail</h1>
+<!-- Change img url to variable -->
+<div class="cards">
+  <% if @cocktails.length == 0 %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      There are no cocktails
+      di
+    </div>
+  <% else %>
+    <% @cocktails.each do |cocktail| %>
+      <!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div> -->
+      <div class="card-category flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <div class="secretail-icon">
+          <%= link_to cocktail_path(cocktail) do %>
+            <i class="fab fa-tripadvisor"></i><br>
+          <% end %>
+        </div>
+        <div class="secretail-name">
+         <%= cocktail.name %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
