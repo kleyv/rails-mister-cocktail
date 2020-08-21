@@ -1,10 +1,18 @@
 <h1>Secret cocktail</h1>
+
+<!-- app/views/articles/index.html.erb -->
+<%= cl_image_tag("inny3erketky7yhrgqbv",
+      width: 400, height: 300, crop: :fill) %>
+
+<!-- for face detection -->
+<%= cl_image_tag("bggucp7nuzmer2iceczq",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
 <!-- Change img url to variable -->
 <div class="cards">
   <% if @cocktails.length == 0 %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
       There are no cocktails
-      di
     </div>
   <% else %>
     <% @cocktails.each do |cocktail| %>
