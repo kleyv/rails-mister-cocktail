@@ -29,13 +29,13 @@ end
 # end
 
 #Cocktails
-spells = []
+# spells = []
 
-30.times do
-  spells << Faker::Movies::HarryPotter.spell
-end
-spells = spells.uniq
+# 30.times do
+#   spells << Faker::Movies::HarryPotter.spell
+# end
+# spells = spells.uniq
 
-for spell in spells
-  cocktail = Cocktail.create!(name: spell)
-end
+# for spell in spells
+#   cocktail = Cocktail.create!(name: spell)
+# end
